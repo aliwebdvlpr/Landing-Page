@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+      overflow: hidden;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding-top: 30px;
+      min-height: 70px;
+      border-bottom: #77C1E4 3px solid;
+    }
+    header h1 {
+      text-align: center;
+      margin: 0;
+      font-size: 24px;
+    }
+    #about, #portfolio, #blog {
+      padding: 20px 0;
+    }
+    #about {
+      background: #e2e2e2;
+    }
+    #portfolio .project, #blog .post {
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .project h3, .post h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>John Doe - Developer</h1>
+    </div>
+  </header>
+
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>Hello! I’m John, a passionate developer with expertise in creating innovative web solutions. I specialize in front-end and back-end development, always eager to learn and take on new challenges.</p>
+  </section>
+
+  <section id="portfolio" class="container">
+    <h2>Portfolio</h2>
+    <div id="projects"></div>
+  </section>
+
+  <section id="blog" class="container">
+    <h2>Blog</h2>
+    <div id="posts"></div>
+  </section>
+
+  <script>
+    // Portfolio Projects
+    const portfolioProjects = [
+      { title: 'Project One', description: 'A web application built using React and Node.js.' },
+      { title: 'Project Two', description: 'An e-commerce site with a custom CMS.' },
+      { title: 'Project Three', description: 'A data visualization tool using D3.js.' }
+    ];
+
+    // Blog Posts
+    const blogPosts = [
+      { title: 'Understanding JavaScript Closures', summary: 'An in-depth guide to closures in JavaScript.' },
+      { title: 'CSS Grid vs Flexbox', summary: 'Comparing two popular CSS layout modules.' },
+      { title: 'Getting Started with React', summary: 'A beginner\'s guide to building apps with React.' }
+    ];
+
+    // Load Portfolio Projects
+    const projectsContainer = document.getElementById('projects');
+    portfolioProjects.forEach(project => {
+      const projectDiv = document.createElement('div');
+      projectDiv.classList.add('project');
+      projectDiv.innerHTML = `<h3>${project.title}</h3><p>${project.description}</p>`;
+      projectsContainer.appendChild(projectDiv);
+    });
+
+    // Load Blog Posts
+    const postsContainer = document.getElementById('posts');
+    blogPosts.forEach(post => {
+      const postDiv = document.createElement('div');
+      postDiv.classList.add('post');
+      postDiv.innerHTML = `<h3>${post.title}</h3><p>${post.summary}</p>`;
+      postsContainer.appendChild(postDiv);
+    });
+  </script>
+</body>
+</html>
